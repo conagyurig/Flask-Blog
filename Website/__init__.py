@@ -3,9 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 import os
 from flask_login import LoginManager
+from flask_migrate import Migrate
+
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
+migrate = Migrate()
 
 
 def create_app():
@@ -30,7 +33,7 @@ def create_app():
 
     from .models import User, Post, Comment, Like
 
-    create_database(app)
+    #create_database(app)
 
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
