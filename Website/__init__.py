@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 import os
 from flask_login import LoginManager
-from flask_migrate import Migrate
+
 
 
 db = SQLAlchemy()
