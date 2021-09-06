@@ -14,9 +14,14 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
+
+
+    #offline use
     #app.config['SECRET_KEY'] = "helloworld"
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     #db.init_app(app)
+
+    #deployed use
     uri = os.getenv("DATABASE_URL")  # or other relevant config var
     if uri.startswith("postgres://"):
         uri = uri.replace("postgres://", "postgresql://", 1)
