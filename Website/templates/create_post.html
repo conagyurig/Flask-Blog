@@ -4,7 +4,15 @@
 <h1 align="center">Make a Post</h1>
 
 <form method='POST'>
-    <textarea name="text" id="text" class="form-control"></textarea>
+    <div class="form-floating">
+        <input type="text" class="form-control" id="title" name="title" placeholder="enter title here">
+        <label for="title">Enter Title</label>
+    </div>
+    <br />
+    <div class="form-floating">
+        <input type="text" class="form-control" id="text" name="text" placeholder="enter text here">
+        <label for="text">Enter Text</label>
+    </div>
     <br />
     <div align="center">
         <button type="submit" class="btn btn-lg btn-primary">Post</button>

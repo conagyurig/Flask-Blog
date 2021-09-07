@@ -30,12 +30,14 @@ def about():
 @login_required
 def create_post():
     if request.method == "POST":
+        title = request.form.get('title')
         text = request.form.get('text')
-
+        if not text:
+            flash('Title cannot be empty', category='error')
         if not text:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(text=text, author=current_user.id)
+            post = Post(text=text, title=title, author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
